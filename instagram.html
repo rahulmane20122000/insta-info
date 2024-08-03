@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-container">
+            <input type="text" id="username-input" placeholder="Enter Instagram username" value="carryminati">
+            <button id="fetch-data">Fetch Data</button>
+        </div>
+        <div class="profile-card" id="profile-card">
+            <h1 id="full-name">Loading...</h1>
+            <p id="username">@loading...</p>
+            <p id="biography">Loading biography...</p>
+            <div class="followers-count">
+                <h2 id="follower-count">0</h2>
+                <p>Followers</p>
+            </div>
+        </div>
+        <div class="reels-container" id="reels-container">
+            <!-- Reels will be dynamically inserted here -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

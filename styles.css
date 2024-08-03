@@ -1,0 +1,232 @@
+body {
+    background: linear-gradient(135deg, #f5696d 0%, #fad0c4 99%, #fad0c4 100%);
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrollbars */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.input-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#username-input {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    border: 2px solid #ff9a9e;
+    border-radius: 25px;
+    outline: none;
+    width: 250px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+#username-input:focus {
+    border-color: #fad0c4;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+#fetch-data {
+    background: linear-gradient(135deg, #6a1b9a, #ab47bc);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#fetch-data:hover {
+    background: linear-gradient(135deg, #ab47bc, #6a1b9a);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#fetch-data:active {
+    background: linear-gradient(135deg, #7b1fa2, #a64b9f);
+    transform: scale(0.95);
+}
+
+#fetch-data::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: width 0.5s ease, height 0.5s ease;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+#fetch-data:hover::before {
+    width: 350%;
+    height: 350%;
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+#fetch-data span {
+    position: relative;
+    z-index: 1;
+}
+
+
+.profile-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 1s ease-in-out;
+    box-sizing: border-box;
+    flex-shrink: 0; /* Prevent shrinking of profile card */
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+p {
+    color: #777;
+    margin: 0.5rem 0;
+}
+
+.followers-count {
+    background: #ff9a9e;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: white;
+}
+
+.followers-count h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.followers-count p {
+    margin: 0;
+}
+
+.reels-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.reel-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    animation: scaleUp 0.5s ease-in-out;
+    box-sizing: border-box;
+}
+
+.reel-card video {
+    width: 100%;
+}
+
+.reel-card p {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-card {
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .followers-count h2 {
+        font-size: 1.5rem;
+    }
+
+    .reel-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-card {
+        padding: 0.5rem;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    .followers-count h2 {
+        font-size: 1.2rem;
+    }
+}
